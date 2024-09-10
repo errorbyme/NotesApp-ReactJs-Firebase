@@ -1,0 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --color-bg-dark: #3a3a3a;
+  --color-bg-black: #1b1b1b;
+  --color-white: rgb(226, 226, 226);
+}
+body {
+  display: grid;
+  line-height: 1.5;
+  background-color: var(--color-bg-black);
+}
+::-webkit-scrollbar {
+  display: none;
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  color: var(--color-white);
+}
+h3 {
+  font-size: 0.85rem;
+  color: var(--color-white);
+}
+
+.s_btn,
+.btn {
+  background-color: var(--color-bg-dark);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+.s_btn {
+  background-color: palevioletred;
+  font-weight: 600;
+  display: flex;
+  width: auto;
+  padding: 1rem;
+  gap: 0.2rem;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  padding: 1rem 1.5rem;
+}
+.page_header {
+  margin: 0 2rem;
+  position: sticky;
+  z-index: 800;
+  top: 0;
+}
+.page_header strong {
+  font-size: 1.3rem;
+}
+.page_header em {
+  text-transform: capitalize;
+  color: plum;
+}
+.notes_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.7rem 0 1rem;
+  background-color: var(--color-bg-black);
+  position: sticky;
+  top: -1px;
+  border: 1px solid #1b1b1b;
+  z-index: 999;
+}
+.sign_page input,
+.notes_header input {
+  width: 100%;
+  flex: 1;
+  padding: 0.5rem;
+  height: 40px;
+  margin-right: 0.5rem;
+  color: var(--color-white);
+  border: none;
+  outline: none;
+  background-color: var(--color-bg-dark);
+}
+
+.notes_header .add_box {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.notes_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  grid-auto-flow: dense;
+}
+.notes_container .note {
+  background-color: blueviolet;
+  padding: 0.6rem;
+  border-radius: 5px;
+  grid-column: span 2;
+}
+.note:nth-child(3n),
+.note:nth-child(3n-1) {
+  grid-column: span 1;
+}
+
+.notes_container p:first-child {
+  color: var(--color-white);
+  font-weight: 600;
+}
+.sign_page p,
+.notes_container .note p {
+  color: rgb(169, 169, 169);
+  margin: 0.3rem 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  align-self: flex-end;
+  text-align: end;
+}
+
+.btn:hover,
+.notes_container .note:hover {
+  opacity: 0.8;
+}
+
+.createn_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+.createn_form textarea {
+  height: 59px;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  background-color: var(--color-bg-black);
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  width: 100%;
+  resize: none;
+  margin-top: 0.3rem;
+}
+.createn_form textarea:last-child {
+  font-size: 1rem;
+}
+/* Sign up & in pages */
+
+.sign_page {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  padding-top: 2rem;
+}
+.sign_page input {
+  margin: 1rem 0;
+}
+
+@media only screen and (max-width: 380px) {
+  .createn_form textarea {
+    font-size: 1.1rem;
+  }
+  .createn_form textarea:last-child {
+    font-size: 0.9rem;
+  }
+}
